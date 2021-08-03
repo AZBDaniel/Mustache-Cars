@@ -33,8 +33,11 @@ Need Update
 
 ## Langauges
 - Javascript
-- 
-- 
+- Marko
+- Node.js
+- CSS
+- SQL
+- Express
 
 
 
