@@ -26,6 +26,7 @@ Need Update
 - npm i
 - npm 
 - mpm
+- Api Kelly Blue Book
 
 
 ## Walkthrough or Screenshot
@@ -33,11 +34,12 @@ Need Update
 
 ## Langauges
 - Javascript
-- Marko
 - Node.js
 - CSS
 - SQL
 - Express
+- Handlebar
+- Bulma
 
 
 
