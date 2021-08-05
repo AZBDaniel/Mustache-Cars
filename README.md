@@ -33,16 +33,16 @@ At this point navigate to cmd console and change direcotry to the location you s
 ## Installation
 - npm i
 - package.json Includes as follows
-- - bcrypt
-- - connect-session-sequelize
-- - dotenv
-- - express
-- - bulma
-- - express-handlebars
-- - express-session
-- - handlebars
-- - mysql2
-- - sequelize
+  - bcrypt
+  - connect-session-sequelize
+  - dotenv
+  - express
+  - bulma
+  - express-handlebars
+  - express-session
+  - handlebars
+  - mysql2
+  - sequelize
 
 
 ## Walkthrough or Screenshot
@@ -65,11 +65,16 @@ TBD
 Copyright (c) 2021
 
 ## Credits
-- Jeremy Lentz, GitHub: [jlentz17](https://github.com/jlentz17)
+
 - University of Arizona Ta,s and Tutors
 
 ## Questions
 
-- Created By: Bryan Daniel
-- GitHub [AZBDaniel](https://github.com/AZBDaniel)
-- Email Address BRDaniel117@gmail.com
+- Created By: TEAM-Mustache-Mustang
+  - Members 
+    - Bryan Daniel 
+        - GitHub [AZBDaniel](https://github.com/AZBDaniel)
+    - Castaneda Kamakanui'aha'ilono
+        - GitHub [kamacasta](https://github.com/kamacasta)
+    - Robert Fuke
+        - GitHub [LakiCode](https://github.com/LakiCode)
