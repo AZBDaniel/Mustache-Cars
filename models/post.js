@@ -9,12 +9,17 @@ class Post extends Model {
 // create fields/columns for Post model
 Post.init(
     {
-        title: {
+        manufacture: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        body: {
-            type: DataTypes.STRING
+        model: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        bodyType: {
+            type: DataTypes.STRING,
+            allowNull: false
         }
     },
     {
