@@ -20,6 +20,10 @@ Post.init(
         bodyType: {
             type: DataTypes.STRING,
             allowNull: false
+        },
+        body: {
+            type: DataTypes.STRING,
+            allowNull: false
         }
     },
     {
