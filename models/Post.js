@@ -13,8 +13,10 @@ class Post extends Model {
         },
         attributes: [
           'id',
-          'post_url',
-          'title',
+          'car_maker',
+          'car_modul',
+          'car_body',
+          'review',
           'created_at',
           [
             sequelize.literal(
