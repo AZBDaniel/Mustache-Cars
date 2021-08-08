@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-const { Post, User, Comment, Vote } = require('../../models');
+const { Post, User, Comment } = require('../../models');
 
 // get all users
 router.get('/', (req, res) => {
@@ -94,7 +94,8 @@ router.post('/', (req, res) => {
       res.status(500).json(err);
     });
 });
-
+// comment upvote method
+/*
 router.put('/upvote', (req, res) => {
   // custom static method created in models/Post.js
   Post.upvote(req.body, { Vote, Comment, User })
@@ -104,7 +105,7 @@ router.put('/upvote', (req, res) => {
       res.status(500).json(err);
     });
 });
-
+*/
 router.put('/:id', (req, res) => {
   Post.update(
     {
