@@ -15,6 +15,10 @@ Post.init(
             primaryKey: true,
             autoIncrement: true
         },
+        title: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         manufacture: {
             type: DataTypes.STRING,
             allowNull: false
@@ -23,11 +27,11 @@ Post.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-        bodyType: {
+        body_type: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        body: {
+        review: {
             type: DataTypes.STRING,
             allowNull: false
         },
