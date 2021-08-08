@@ -14,7 +14,7 @@ Post.init(
             allowNull: false,
             primaryKey: true,
             autoIncrement: true
-          },
+        },
         manufacture: {
             type: DataTypes.STRING,
             allowNull: false
@@ -34,10 +34,10 @@ Post.init(
         user_id: {
             type: DataTypes.INTEGER,
             references: {
-              model: 'user',
-              key: 'id'
+                model: 'user',
+                key: 'id'
             }
-          }
+        }
     },
     {
         sequelize,
