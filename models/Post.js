@@ -67,6 +67,10 @@ Post.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    car_model: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     car_body: {
       type: DataTypes.STRING,
       allowNull: false,
