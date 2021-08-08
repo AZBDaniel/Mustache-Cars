@@ -9,14 +9,16 @@ router.get('/', withAuth, (req, res) => {
   console.log('======================');
   Post.findAll({
     where: {
-      user_id: req.session.user_id
+      user_id: req.session.user_id,
     },
     attributes: [
       'id',
-      'post_url',
-      'title',
+      'car_maker',
+      'car_model',
+      'car_body',
+      'review',
       'created_at',
-      [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+      // [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
     ],
     include: [
       {
@@ -24,20 +26,20 @@ router.get('/', withAuth, (req, res) => {
         attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
         include: {
           model: User,
-          attributes: ['username']
-        }
+          attributes: ['username'],
+        },
       },
       {
         model: User,
-        attributes: ['username']
-      }
-    ]
+        attributes: ['username'],
+      },
+    ],
   })
-    .then(dbPostData => {
-      const posts = dbPostData.map(post => post.get({ plain: true }));
+    .then((dbPostData) => {
+      const posts = dbPostData.map((post) => post.get({ plain: true }));
       res.render('dashboard', { posts, loggedIn: true });
     })
-    .catch(err => {
+    .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
@@ -47,10 +49,12 @@ router.get('/edit/:id', withAuth, (req, res) => {
   Post.findByPk(req.params.id, {
     attributes: [
       'id',
-      'post_url',
-      'title',
+      'car_maker',
+      'car_model',
+      'car_body',
+      'review',
       'created_at',
-      [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+      //  [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
     ],
     include: [
       {
@@ -58,28 +62,28 @@ router.get('/edit/:id', withAuth, (req, res) => {
         attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
         include: {
           model: User,
-          attributes: ['username']
-        }
+          attributes: ['username'],
+        },
       },
       {
         model: User,
-        attributes: ['username']
-      }
-    ]
+        attributes: ['username'],
+      },
+    ],
   })
-    .then(dbPostData => {
+    .then((dbPostData) => {
       if (dbPostData) {
         const post = dbPostData.get({ plain: true });
-        
+
         res.render('edit-post', {
           post,
-          loggedIn: true
+          loggedIn: true,
         });
       } else {
         res.status(404).end();
       }
     })
-    .catch(err => {
+    .catch((err) => {
       res.status(500).json(err);
     });
 });
