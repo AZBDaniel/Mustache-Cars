@@ -1,15 +1,17 @@
 <article>
   <a href="/dashboard"> &larr; Back to dashboard</a>
   <h2>
-    Edit Post
+    Edit Car review
   </h2>
   <form class="edit-post-form">
     <div>
       <input name="post-review" type="text" value="{{post.review}}" />
-      <span>({{post.carbody}})</span>
+      <span>({{post.img_link}})</span>
     </div>
     <div>
-      <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
+      Review is created by {{user.username}} on {{ post.created_at}}
+      |
+      <a href="/post/{{post.id}}">{{post.comments.length}} "comment:" {{ post.comments.length}}</a>
     </div>
     <button type="submit">Save post</button>
     <button type="button" class="delete-post-btn">Delete post</button>
