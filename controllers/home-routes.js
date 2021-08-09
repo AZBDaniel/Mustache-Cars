@@ -48,7 +48,10 @@ router.get('/', (req, res) => {
       res.status(500).json(err);
     });
 });
-
+// render sign in
+router.get('/signin', (req, res) => {
+  res.render('signin');
+});
 // get single post
 router.get('/post/:id', (req, res) => {
   Post.findOne({
