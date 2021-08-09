@@ -12,24 +12,45 @@
 <body>
   <div class="wrapper">
     <header>
-      <h1>
-        <a href="/">Mustache Cars</a>
-      </h1>
-      <nav>
-        {{#if loggedIn}}
-        <a href="/dashboard">dashboard</a>
-        <button id="logout" class="btn-no-style">logout</button>
-        {{else}}
-        <a href="/login">login</a>
-        {{/if}}
-      </nav>
+      {{!-- <nav class="navbar is-transparent">
+        <div class="navbar-brand">
+          <h1 class="title"><a class="nav" href="/">Mustache Cars</a> </h1> --}}
+          <nav class="navbar is-transparent">
+            <div class="navbar-brand">
+              <!-- Clicking Mustache Mustangs will direct to git repo-->
+              <a class="navbar-item" href="https://github.com/AZBDaniel/mustache_cars" target="blank">
+
+                <h1 class="title"><a href="/"> Mustache Mustangs </a></h1>
+              </a>
+              <div class="navbar" data-target="navbarExampleTransparentExample">
+              </div>
+              {{#if loggedIn}}
+              <a href="/dashboard">dashboard</a>
+              <button id="logout" class="btn-no-style">logout</button>
+              {{else}}
+              <div class="navbar-end">
+                <div class="navbar-item">
+                  <div class="buttons">
+                    <div class="button is-info">
+                      <a href="/login">login</a>
+                      {{/if}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
     </header>
     <main>
       {{{ body }}}
     </main>
-    <footer>
-      Thanks for visiting!
-    </footer>
+    <footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      <em>Made by the </em><a href="https://github.com/AZBDaniel/mustache_cars" target="blank"><strong>Mustache Mustangs</strong></a>
+    </p>
+  </div>
+</footer>
   </div>
   
   {{#if loggedIn}}
