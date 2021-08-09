@@ -1,11 +1,23 @@
 <article class="post">
-  <div class="title">
-    <a href="{{post_url}}" target="_blank">{{title}}</a>
-    <span>({{format_url post_url}})</span> 
+  <div class="Car_name">
+      Car Model: {{car_model}}
+    </div>
+    <div class="carImg">
+      <a href="{{img_link}}" target="_blank"> {{img_link}}</a>
+    </div>
+    <div class="review">
+      Review: {{review}}
+    </div>
+    <div class="meta">
+      Owner: {{user.username}}
+      Car Maker: {{car_maker}}
+      Car body: {{car_body}}
+      Review created on: {{created_at}}
+    </div>
+    
+    <span>({{post_url}})</span>
   </div>
   <div class="meta">
-    {{vote_count}} {{format_plural "point" vote_count}} by {{user.username}} on {{format_date created_at}}
-    |
-    <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+    <a href="/post/{{id}}">{{comments.length}} comments:{{comments.length}}</a>
   </div>
 </article>
