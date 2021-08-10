@@ -14,13 +14,7 @@ router.get('/', (req, res) => {
       'car_body',
       'review',
       'created_at',
-      /*
-      [
-        sequelize.literal(
-          '(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'
-        ),
-        'vote_count',
-      ], */
+ main
     ],
     include: [
       {
@@ -56,14 +50,7 @@ router.get('/:id', (req, res) => {
       'car_body',
       'review',
       'created_at',
-      /*
-      [
-        sequelize.literal(
-          '(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'
-        ),
-        'vote_count',
-      ],
-      */
+ main
     ],
     include: [
       {
@@ -110,6 +97,7 @@ router.post('/', withAuth, (req, res) => {
     });
 });
 
+
 router.put('/upvote', withAuth, (req, res) => {
   // custom static method created in models/Post.js
   Post.upvote(
@@ -124,6 +112,7 @@ router.put('/upvote', withAuth, (req, res) => {
 });
 
 router.put('/:id', withAuth, (req, res) => {
+
   Post.update(
     {
       review: req.body.review,
