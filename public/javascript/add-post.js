@@ -1,18 +1,24 @@
 async function newFormHandler(event) {
   event.preventDefault();
 
-  const title = document.querySelector('input[name="post-title"]').value;
-  const post_url = document.querySelector('input[name="post-url"]').value;
+  const car_maker = document.querySelector('input[name="post-carmaker"]').value;
+  const car_modul = document.querySelector('input[name="post-carmodel"]').value;
+  const car_body = document.querySelector('input[name="post-carbody"]').value;
+  const post_img = document.querySelector('input[name="post-img"]').value;
+  const review = document.querySelector('input[name="post-review"]').value;
 
   const response = await fetch(`/api/posts`, {
     method: 'POST',
     body: JSON.stringify({
-      title,
-      post_url
+      car_maker,
+      car_modul,
+      car_body,
+      post_img,
+      review,
     }),
     headers: {
-      'Content-Type': 'application/json'
-    }
+      'Content-Type': 'application/json',
+    },
   });
 
   if (response.ok) {
@@ -22,4 +28,6 @@ async function newFormHandler(event) {
   }
 }
 
-document.querySelector('.new-post-form').addEventListener('submit', newFormHandler);
+document
+  .querySelector('.new-post-form')
+  .addEventListener('submit', newFormHandler);

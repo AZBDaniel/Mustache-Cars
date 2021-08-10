@@ -2,22 +2,28 @@
   <div class="Car_name">
       Car Model: {{car_model}}
     </div>
+    <!-- add car image to show in detaild not on dashboard
     <div class="carImg">
-      <a href="{{img_link}}" target="_blank"> {{img_link}}</a>
+      <a href="{{img_link}}" target="_blank"> Car image: {{img_link}}</a>
+    </div>
+    -->
+    <div class="meta">
+      <ol>
+      <li>Car owner: {{user.username}}</li>
+      <li>Car Maker: {{car_maker}}</li>
+     <li>Car body: {{car_body}}</li>
+      </ol>
+
+     
     </div>
     <div class="review">
       Review: {{review}}
     </div>
-    <div class="meta">
-      Owner: {{user.username}}
-      Car Maker: {{car_maker}}
-      Car body: {{car_body}}
-      Review created on: {{created_at}}
+    <div>
+       Review created on: {{created_at}}
     </div>
-    
-    <span>({{post_url}})</span>
   </div>
   <div class="meta">
-    <a href="/post/{{id}}">{{comments.length}} comments:{{comments.length}}</a>
+    <a href="/post/{{id}}"> Comments:{{comments.length}}</a>
   </div>
 </article>

@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
 const { Post, User, Comment } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 // get all users
 router.get('/', (req, res) => {
@@ -12,9 +13,9 @@ router.get('/', (req, res) => {
       'car_model',
       'car_body',
       'review',
-      'created_at'
+      'created_at',
+ main
     ],
-    order: [['created_at', 'DESC']],
     include: [
       {
         model: Comment,
@@ -43,10 +44,13 @@ router.get('/:id', (req, res) => {
       id: req.params.id,
     },
     attributes: [
+      'id',
       'car_maker',
       'car_model',
       'car_body',
-      'review'
+      'review',
+      'created_at',
+ main
     ],
     include: [
       {
@@ -76,7 +80,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
   // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
   Post.create({
     car_maker: req.body.car_maker,
@@ -93,7 +97,22 @@ router.post('/', (req, res) => {
     });
 });
 
-router.put('/:id', (req, res) => {
+
+router.put('/upvote', withAuth, (req, res) => {
+  // custom static method created in models/Post.js
+  Post.upvote(
+    { ...req.body, user_id: req.session.user_id },
+    { Vote, Comment, User }
+  )
+    .then((updatedVoteData) => res.json(updatedVoteData))
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+router.put('/:id', withAuth, (req, res) => {
+
   Post.update(
     {
       review: req.body.review,
@@ -117,7 +136,8 @@ router.put('/:id', (req, res) => {
     });
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
+  console.log('id', req.params.id);
   Post.destroy({
     where: {
       id: req.params.id,

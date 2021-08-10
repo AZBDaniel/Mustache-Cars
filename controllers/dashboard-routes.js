@@ -17,7 +17,7 @@ router.get('/', withAuth, (req, res) => {
       'car_model',
       'car_body',
       'review',
-      'created_at'
+      'created_at',
     ],
     include: [
       {
@@ -52,7 +52,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
       'car_model',
       'car_body',
       'review',
-      'created_at'
+      'created_at',
     ],
     include: [
       {
