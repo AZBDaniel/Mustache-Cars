@@ -96,6 +96,12 @@ main {
   flex: 1;
   padding: 2% 4%;
 }
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  border-bottom: solid black;
+}
 
 .btn-no-style {
   background: none;
