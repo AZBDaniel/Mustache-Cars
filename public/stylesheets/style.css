@@ -15,7 +15,9 @@ body, html {
   font-family: sans-serif;
   color: #333;
 }
-
+.box {
+  opacity: 90%;
+}
 a {
   text-decoration: none;
   color: #225ca3;
@@ -101,6 +103,8 @@ main {
   flex-wrap: wrap;
   justify-content: space-evenly;
   border-bottom: solid black;
+  background-image:url(../images/fleet.jpg);
+  background-position: 50%;
 }
 
 .btn-no-style {
