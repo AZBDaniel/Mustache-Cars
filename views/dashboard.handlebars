@@ -1,12 +1,12 @@
 <br>
 <div class="create-post-header">
-  <h1 class="title"> Create Post</h1>
+  <h1 class="title has-text-centered">Create Post</h1>
 </div>
 <br>
-<div class="columns">
+<div class="columns is-centered">
   <div class="column is-half">
-    <section class="box">
-      <form class="new-post-form">
+    <section class="box is-info">
+      <form class="new-post-form ">
         <div>
           <label for="post-carmaker">Car Maker</label>
           <input type="text" id="post-carmaker" name="post-carmaker" />
@@ -27,20 +27,22 @@
           <label for="post-carbody">Car Review</label>
           <input type="text" id="post-review" name="post-review" />
         </div>
-        <button type="submit" class="btn">Create</button>
+        <button type="submit" class="button is-info"> Share </i></button>
   </div>
+</div>
 </form>
 </section>
 
-<div class="column is-half">
+<div class="columns is-centered">
+  <div class="column is-half box">
 {{#if posts.length}}
 <section>
-  <h1 class="title">Your Posts</h1>
+  <h1 class="title has-text-centered">Your Posts</h1>
   <ul>
     {{#each posts as |post|}}
     <li>
       {{> post-info post}}
-      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+      <a href="/dashboard/edit/{{post.id}}" class="edit-link"><i class="fad fa-edit"></i></a>
     </li>
     {{/each}}
   </ul>
