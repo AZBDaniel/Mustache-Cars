@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
       'car_body',
       'review',
       'created_at',
- main
+      main,
     ],
     include: [
       {
@@ -50,7 +50,6 @@ router.get('/:id', (req, res) => {
       'car_body',
       'review',
       'created_at',
- main
     ],
     include: [
       {
@@ -88,7 +87,7 @@ router.post('/', withAuth, (req, res) => {
     car_body: req.body.car_body,
     review: req.body.review,
     img_link: req.body.img_link,
-    user_id: req.body.user_id,
+    user_id: req.session.user_id,
   })
     .then((dbPostData) => res.json(dbPostData))
     .catch((err) => {
@@ -96,7 +95,6 @@ router.post('/', withAuth, (req, res) => {
       res.status(500).json(err);
     });
 });
-
 
 router.put('/upvote', withAuth, (req, res) => {
   // custom static method created in models/Post.js
@@ -112,7 +110,6 @@ router.put('/upvote', withAuth, (req, res) => {
 });
 
 router.put('/:id', withAuth, (req, res) => {
-
   Post.update(
     {
       review: req.body.review,
