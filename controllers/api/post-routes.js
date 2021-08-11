@@ -14,7 +14,6 @@ router.get('/', (req, res) => {
       'car_body',
       'review',
       'created_at',
-      main,
     ],
     include: [
       {
@@ -80,7 +79,6 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', withAuth, (req, res) => {
-  // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
   Post.create({
     car_maker: req.body.car_maker,
     car_model: req.body.car_model,
