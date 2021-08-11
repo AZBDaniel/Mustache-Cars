@@ -1,12 +1,13 @@
-<div class="comments">
+<div class="comments box">
   {{#each this}}
-  <section class="comment">
+  <section class="comment box">
     <div class="meta">
       {{user.username}} on {{created_at}}
     </div>
-    <div class="text">
+    <div class="text box">
       {{comment_text}}
     </div>
   </section>
   {{/each}}
 </div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">

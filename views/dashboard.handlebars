@@ -1,43 +1,53 @@
-<section>
-  <h2>Create new car Review</h2>
-
-  <form class="new-post-form">
-    <div>
-      <label for="post-carmaker">Car Maker</label>
-      <input type="text" id="post-carmaker" name="post-carmaker" />
-    </div>
+<br>
+<div class="create-post-header">
+  <h1 class="title"> Create Post</h1>
+</div>
+<br>
+<div class="columns">
+  <div class="column is-half">
+    <section class="box">
+      <form class="new-post-form">
         <div>
-      <label for="post-carmodel">Car Model</label>
-      <input type="text" id="post-carmodel" name="post-carmodel" />
-    </div>
+          <label for="post-carmaker">Car Maker</label>
+          <input type="text" id="post-carmaker" name="post-carmaker" />
+        </div>
         <div>
-      <label for="post-carbody">Car Body</label>
-      <input type="text" id="post-carbody" name="post-carbody" />
-    </div>
-    <div>
-      <label for="post-img">Your Car Image</label>
-      <input id="post-img" name="post-img" />
-    </div>
-    <div>
-      <label for="post-carbody">Car Review</label>
-      <input type="text" id="post-review" name="post-review" />
-    </div>
-    <button type="submit" class="btn">Create</button>
-  </form>
+          <label for="post-carmodel">Car Model</label>
+          <input type="text" id="post-carmodel" name="post-carmodel" />
+        </div>
+        <div>
+          <label for="post-carbody">Car Body</label>
+          <input type="text" id="post-carbody" name="post-carbody" />
+        </div>
+        <div>
+          <label for="post-img">Your Car Image</label>
+          <input id="post-img" name="post-img" />
+        </div>
+        <div>
+          <label for="post-carbody">Car Review</label>
+          <input type="text" id="post-review" name="post-review" />
+        </div>
+        <button type="submit" class="btn">Create</button>
+  </div>
+</form>
 </section>
 
+<div class="column is-half">
 {{#if posts.length}}
 <section>
-  <h2>Your Posts</h2>
-  <ol>
+  <h1 class="title">Your Posts</h1>
+  <ul>
     {{#each posts as |post|}}
     <li>
       {{> post-info post}}
       <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
     </li>
     {{/each}}
-  </ol>
+  </ul>
 </section>
+</div>
+</div>
 {{/if}}
 
 <script src="/javascript/add-post.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
