@@ -15,7 +15,7 @@ class Post extends Model {
         attributes: [
           'id',
           'car_maker',
-          'car_modul',
+          'car_model',
           'car_body',
           'review',
           'created_at'
