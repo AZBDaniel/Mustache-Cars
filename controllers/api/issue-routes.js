@@ -28,7 +28,7 @@ router.get('/:id', withAuth, (req, res) => {
 
 router.post('/', withAuth, (req, res) => {
     Issue.create({
-        issue: req.body.issue,
+        issue_title: req.body.issue_title,
         issue_comment: req.body.issue_comment,
         user_id: req.session.user_id
     }).then((issueCreate) => {

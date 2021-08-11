@@ -13,7 +13,7 @@ Issue.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    issue: {
+    issue_title: {
       type: DataTypes.STRING,
       allowNull: false,
     },
