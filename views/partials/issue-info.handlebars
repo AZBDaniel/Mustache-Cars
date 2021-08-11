@@ -1,0 +1,25 @@
+<article class="post">
+    <div class="box">
+        <div class="Car_name">
+            Issue Title: {{issue_title}}
+        </div>
+        <div class="meta">
+            <ol>
+                
+                <li>Issued By: {{user.username}}</li>
+            </ol>
+
+
+        </div>
+        <div class="review">
+            <li>Issued Comment: {{issue_comment}}</li>
+        </div>
+        <div>
+            Review created on: {{created_at}}
+        </div>
+    </div>
+    </div>
+    <div class="meta">
+        <a href="/issue/{{id}}"> Issues:{{issues.length}}</a>
+    </div>
+</article>
