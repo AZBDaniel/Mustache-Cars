@@ -13,6 +13,7 @@ router.get('/', (req, res) => {
       'car_body',
       'review',
       'created_at',
+      'user_id'
     ],
     include: [
       {
@@ -31,9 +32,10 @@ router.get('/', (req, res) => {
   })
     .then((dbPostData) => {
       const posts = dbPostData.map((post) => post.get({ plain: true }));
-
+      const users = [...new Set(posts.map(p => p.user_id))];
       res.render('homepage', {
         posts,
+        users,
         loggedIn: req.session.loggedIn,
       });
     })
@@ -42,6 +44,7 @@ router.get('/', (req, res) => {
       res.status(500).json(err);
     });
 });
+
 // render sign in
 router.get('/signin', (req, res) => {
   res.render('signin');
