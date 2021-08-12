@@ -1,4 +1,6 @@
 <article class="post">
+  <div class="columns">
+    <div class="column is-three-quarters">
   <div class="box">
   <div class="Car_name">
       Car Model: {{car_model}}
@@ -9,11 +11,11 @@
     </div>
     -->
     <div class="meta">
-      <ol>
+      <ul>
       <li>Car owner: {{user.username}}</li>
       <li>Car Maker: {{car_maker}}</li>
      <li>Car body: {{car_body}}</li>
-      </ol>
+      </ul>
 
      
     </div>
@@ -25,7 +27,14 @@
     </div>
   </div>
   </div>
-  <div class="meta">
-    <a href="/post/{{id}}"> Comments:{{comments.length}}</a>
   </div>
-</article>
+  </article>
+
+  <div class="meta">
+    <a href="/post/{{id}}"> <i class="fad fa-comment"></i> {{comments.length}}</a>
+  </div>
+  <br>
+  <br>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>

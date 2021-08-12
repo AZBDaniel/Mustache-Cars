@@ -1,33 +1,36 @@
-<ol class="post-list">
+<div class="columns is-centered">
+    <div class="column tile is-parent is-half">
+      <article class="tile is-child notification">
+        <p class="title has-text-centered"> Join Our Community</p>
+        <p class="subtitle has-text-centered">Form for <em>Car Enthusiasts</em></p>
+        <div class="content has-text-centered">
+          If you like cars and want to talk to other people that also do, this is the form for you. Join our community
+          and
+          post and comment on other members rides.
+          <br>
+          <br>
+          <p class="subtitle-6"> <strong> Talking Cars</strong><em> Since 2021 </em></p>
+        </div>
+        <div class="column is-centered">
+          <p class="has-text-centered ">
+            <span class="icon is-small is-left">
+            <i class="fad fa-pen-square"></i>
+            </span>
+            {{posts.length}}
+            <br>
+            <span class="icon is-small is-left">
+              <i class="fas fa-user"></i>
+            </span>
+            {{users.length}}
+          </p>
+        </div>
+    </div>
+    </article>
+  </div><ol class="post-list">
   {{#each posts as |post|}}
   <ol>
   {{> post-info post }}
   </ol>
   {{/each}}
-  <div>
-    <h3>
-      Form for CAR Enthusiasts
-    </h3>
-    <h4>
-      Since 2021
-    </h4>
-    <p>
-      If you like cars and want to talk to other people that also do, this is the form for you. Join our community and
-      post and comment on other members rides.
-    </p>
-    <p>
-      Posts {{posts.length}}
-    </p>
-    <p>
-      Users {{users.length}}
-    </p>
-  </div>
-  <div>
-    <h3>
-      Future Site Updates
-    </h3>
-    <ul>
-      <li></li>
-    </ul>
-  </div>
-</ol>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
