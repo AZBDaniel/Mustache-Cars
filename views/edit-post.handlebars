@@ -1,43 +1,43 @@
-  <button class="button">
-    <a href="/dashboard"><i class="fas fa-long-arrow-left"></i></a>
-  </button>
-  <br>
-  <br>
-  
-  <section class="box cloumns">
-   <div class="column is-half">
-  <h1 class="title has-text-centered">
-    Edit Car Review
-  </h1>
-  <form class="edit-post-form">
+<button class="button">
+  <a href="/dashboard"><i class="fas fa-long-arrow-left"></i></a>
+</button>
+<br>
+<br>
+
+<section class="cloumns is-centered box">
+  <div class="column is-two-thirds">
+    <h1 class="title has-text-centered">
+      Edit Car Review
+    </h1>
+    <form class="edit-post-form">
       <input name="post-review" placeholder="Change your mind?" type="text" value="{{post.info}}" />
       {{!-- <span>({{post.img_link}})</span> --}}
-    </div>
-    <div>
-      Review is created by {{user.username}} on {{ post.created_at}}
-      |
-      <a href="/post/{{post.id}}"><i class="fad fa-comment"></i> {{ post.comments.length}}</a>
-    </div>
-    <div class="buttons">
-    <button class="button is-info" type="submit">Save post</button>
-    <button class="button is-danger" type="button" class="delete-post-btn">Delete post</button>
-    </div>
-
-<form class="comment-form">
-    <textarea name="comment-body"></textarea>
   </div>
-
   <div>
-    <button class="button is-info" type="submit"><i class="fad fa-comment"></i>
-    <a href="/post/{{post.id}}"></a>
-    </button>
+    Review is created by {{user.username}} on {{ post.created_at}}
+    |
+    <a href="/post/{{post.id}}"><i class="fad fa-comment"></i> {{ post.comments.length}}</a>
+  </div>
+  <div class="buttons">
+    <button class="button is-info" type="submit">Save post</button>
+    <button type="button" class="delete-post-btn button is-danger">Delete post</button>
+  </div>
+</section>
+<div class="box">
+  {{> comments post.comments}}
+
+  <form class="comment-form">
+    <div>
+      <textarea class="textarea" name="comment-body"></textarea>
+      <div class="buttons">
+        <button class="button is-info" type="submit"><i class="fad fa-comment"></i>
+          <a href="/post/{{post.id}}"></a>
+        </button>
+      </div>
 
     </div>
-</form>
-</section>
-
-{{> comments post.comments}}
-
+  </form>
+</div>
 <script src="/javascript/edit-post.js"></script>
 <script src="/javascript/delete-post.js"></script>
 <script src="/javascript/comment.js"></script>
