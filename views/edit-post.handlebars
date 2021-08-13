@@ -18,8 +18,10 @@
       |
       <a href="/post/{{post.id}}"><i class="fad fa-comment"></i> {{ post.comments.length}}</a>
     </div>
-    <button type="submit">Save post</button>
-    <button type="button" class="delete-post-btn">Delete post</button>
+    <div class="buttons">
+    <button class="button is-info" type="submit">Save post</button>
+    <button class="button is-danger" type="button" class="delete-post-btn">Delete post</button>
+    </div>
 
 <form class="comment-form">
     <textarea name="comment-body"></textarea>
