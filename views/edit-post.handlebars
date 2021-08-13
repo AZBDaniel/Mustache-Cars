@@ -1,43 +1,56 @@
-  <button class="button">
-    <a href="/dashboard"><i class="fas fa-long-arrow-left"></i></a>
-  </button>
-  <br>
-  <br>
-  
-  <section class="box cloumns">
-   <div class="column is-half">
-  <h1 class="title has-text-centered">
-    Edit Car Review
-  </h1>
-  <form class="edit-post-form">
-      <input name="post-review" placeholder="Change your mind?" type="text" value="{{post.info}}" />
-      {{!-- <span>({{post.img_link}})</span> --}}
-    </div>
+<button class="button">
+  <a href="/dashboard"><i class="fas fa-long-arrow-left"></i></a>
+</button>
+<br>
+<br>
+<br>
+<div class="columns is-centered">
+  <div class="box column is-three-fifths">
+    <h1 class="title has-text-centered">
+      Edit Car Review
+    </h1>
+    <br>
+    <h1 class="title is-4 has-text-centered">
+      <!--  -->
+      Car Model:{{car_maker}} {{car_model}} {{car_body}}
+    </h1>
+    <form class="edit-post-form">
+      <input name="post-review" class="textarea" placeholder="Change your mind?" type="text" value="{{post.info}}" />
+    </form>
     <div>
       Review is created by {{user.username}} on {{ post.created_at}}
       |
       <a href="/post/{{post.id}}"><i class="fad fa-comment"></i> {{ post.comments.length}}</a>
     </div>
-    <button type="submit">Save post</button>
-    <button type="button" class="delete-post-btn">Delete post</button>
-
-<form class="comment-form">
-    <textarea name="comment-body"></textarea>
-  </div>
-
-  <div>
-    <button class="button is-info" type="submit"><i class="fad fa-comment"></i>
-    <a href="/post/{{post.id}}"></a>
-    </button>
-
+    <br>
+    <br>
+    <div class="buttons is-centered">
+      <button class="button is-info" type="button">Save</button>
+      <button type="button" class="delete-post-btn button is-danger">Delete</button>
     </div>
-</form>
-</section>
+  </div>
+</div>
+<br>
+<br>
+<div class="columns is-centered">
+  <div class="box column is-three-quarters">
+    {{> comments post.comments}}
+    <form class="comment-form">
+      <div>
+        <textarea class="textarea" name="comment-body"></textarea>
+        <br>
+        <br>
+        <button class="button is-info" type="submit"><i class="fad fa-comment"></i>
+          <a href="{{post.id}}"></a>
+        </button>
 
-{{> comments post.comments}}
-
+      </div>
+    </form>
+  </div>
+</div>
 <script src="/javascript/edit-post.js"></script>
 <script src="/javascript/delete-post.js"></script>
 <script src="/javascript/comment.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+  integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
