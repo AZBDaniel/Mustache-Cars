@@ -4,7 +4,7 @@
 </div>
 <br>
 <div class="columns is-centered">
-  <div class="column is-half">
+  <div class="column is-half box has-background-info">
     <section class="box is-info">
       <form class="new-post-form ">
         <div>
@@ -32,17 +32,26 @@
 </div>
 </form>
 </section>
-
+<br>
+<br> 
 <div class="columns is-centered">
-  <div class="column is-half box">
+  <div class="column is-half box has-background-info">
 {{#if posts.length}}
-<section>
+<section class="box">
   <h1 class="title has-text-centered">Your Posts</h1>
+  <br>
   <ul>
     {{#each posts as |post|}}
     <li>
       {{> post-info post}}
-      <a href="/dashboard/edit/{{post.id}}" class="edit-link"><i class="fad fa-edit"></i></a>
+      <div class="buttons">
+      <button class="button is-info is-inverted">
+        <a href="/dashboard/edit/{{post.id}}" class="edit-link"><i class="fad fa-edit"></i>
+        </button>
+      <button class="button is-info is-inverted">
+        <a href="/post/{{id}}"> <i class="fad fa-comment"></i> {{comments.length}}</a>
+        </button>
+      </div>
     </li>
     {{/each}}
   </ul>
