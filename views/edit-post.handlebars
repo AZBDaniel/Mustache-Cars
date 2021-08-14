@@ -5,11 +5,13 @@
 <br>
 <br>
 <div class="columns is-centered">
-  <div class="box column is-three-fifths">
+  <div class="box column is-three-quarters">
     <h1 class="title has-text-centered">
       Edit Car Review
     </h1>
+    <hr class="has-background-dark">
     <br>
+
     <h1 class="title is-4 has-text-centered">
       {{car_maker}} {{car_model}} {{car_body}}
     </h1>
@@ -34,12 +36,12 @@
 <div class="columns is-centered">
   <div class="box column is-three-quarters">
     {{> comments post.comments}}
-    <form class="comment-form">
+    <form class="comment-form box column is-half">
       <div>
         <textarea class="textarea" name="comment-body"></textarea>
         <br>
         <br>
-        <button class="button is-info" type="submit"><i class="fad fa-comment"></i>
+        <button class="button is-info is-inverted" type="submit"><i class="fad fa-comment"></i>
           <a href="{{post.id}}"></a>
         </button>
 
