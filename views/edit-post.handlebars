@@ -11,14 +11,13 @@
     </h1>
     <br>
     <h1 class="title is-4 has-text-centered">
-      <!--  -->
-      Car Model:{{car_maker}} {{car_model}} {{car_body}}
+      {{car_maker}} {{car_model}} {{car_body}}
     </h1>
     <form class="edit-post-form">
       <input name="post-review" class="textarea" placeholder="Change your mind?" type="text" value="{{post.info}}" />
     </form>
     <div>
-      Review is created by {{user.username}} on {{ post.created_at}}
+      {{user.username}} {{ post.created_at}}
       |
       <a href="/post/{{post.id}}"><i class="fad fa-comment"></i> {{ post.comments.length}}</a>
     </div>
