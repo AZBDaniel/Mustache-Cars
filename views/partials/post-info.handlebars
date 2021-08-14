@@ -1,40 +1,32 @@
+<hr>
+<br>
 <article class="post">
-  <div class="columns">
+  <div class="columns is-centered">
     <div class="column is-three-quarters">
-  <div class="box">
-  <div class="Car_name">
-      Car Model: {{car_model}}
-    </div>
-    <!-- add car image to show in detaild not on dashboard
-    <div class="carImg">
-      <a href="{{img_link}}" target="_blank"> Car image: {{img_link}}</a>
-    </div>
-    -->
-    <div class="meta">
-      <ul>
-      <li>Car owner: {{user.username}}</li>
-      <li>Car Maker: {{car_maker}}</li>
-     <li>Car body: {{car_body}}</li>
-      </ul>
+      <div class="box">
+        <div class="Car_name title is-4">
+          {{car_maker}} {{car_model}} {{car_body}}
+        </div>
+        <div class="meta">
+          <h1 class="title is-6">
+            {{user.username}}
+          </h1>
 
-     
-    </div>
-    <div class="review">
-      Review: {{review}}
-    </div>
-    <div>
-       Review created on: {{created_at}}
-    </div>
-  </div>
-  </div>
-  </div>
-  </article>
+        </div>
+        <div class="review">
+          "{{review}}"
+        </div>
+        <div>
+          Review created on: {{created_at}}
+        </div>
 
-  <div class="meta">
-    <a href="/post/{{id}}"> <i class="fad fa-comment"></i> {{comments.length}}</a>
+      </div>
+      <a class="is-centered" href="/post/{{id}}"> <i class="fad fa-comment"></i> {{comments.length}}</a>
+    </div>
   </div>
-  <br>
-  <br>
+</article>
+<br>
+<br>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>

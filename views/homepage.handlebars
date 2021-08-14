@@ -3,6 +3,7 @@
       <article class="tile is-child notification">
         <p class="title has-text-centered"> Join Our Community</p>
         <p class="subtitle has-text-centered">Form for <em>Car Enthusiasts</em></p>
+        <hr class="has-background-info">
         <div class="content has-text-centered">
           If you like cars and want to talk to other people that also do, this is the form for you. Join our community
           and
@@ -25,12 +26,14 @@
           </p>
         </div>
     </div>
+    <hr>
     </article>
+
   </div><ol class="post-list">
   {{#each posts as |post|}}
-  <ol>
+  <ul>
   {{> post-info post }}
-  </ol>
+  </ul>
   {{/each}}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
