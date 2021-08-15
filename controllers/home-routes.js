@@ -5,34 +5,34 @@ const { Post, User, Comment } = require('../models');
 // get all posts for homepage
 router.get('/', (req, res) => {
   console.log('======================');
-  Post.findAll({
+  User.findAll({
     attributes: [
-      'id',
-      'car_maker',
-      'car_model',
-      'car_body',
-      'review',
-      'created_at',
-      'user_id'
+      'id'
     ],
     include: [
       {
-        model: Comment,
-        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-        include: {
-          model: User,
-          attributes: ['username'],
-        },
+        model: Post,
+        attributes: ['id', 'car_maker', 'car_model', 'car_body', 'review', 'created_at', 'user_id'],
+        include: [
+          {
+            model: Comment,
+            attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+            include: {
+              model: User,
+              attributes: ['username'],
+            }
+          },
+          {
+            model: User,
+            attributes: ['username']
+          }
+        ],
       },
-      {
-        model: User,
-        attributes: ['username'],
-      },
-    ],
+    ]
   })
-    .then((dbPostData) => {
-      const posts = dbPostData.map((post) => post.get({ plain: true }));
-      const users = [...new Set(posts.map(p => p.user_id))];
+    .then((dbUserData) => {
+      const users = dbUserData.map((user) => user.get({ plain: true }));
+      const posts = users.reduce((posts, user) => posts.concat(user.posts), []);
       res.render('homepage', {
         posts,
         users,
