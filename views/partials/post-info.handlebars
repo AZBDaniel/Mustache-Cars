@@ -1,40 +1,39 @@
+
+<br>
 <article class="post">
-  <div class="columns">
-    <div class="column is-three-quarters">
-  <div class="box">
-  <div class="Car_name">
-      Car Model: {{car_model}}
-    </div>
-    <!-- add car image to show in detaild not on dashboard
-    <div class="carImg">
-      <a href="{{img_link}}" target="_blank"> Car image: {{img_link}}</a>
-    </div>
-    -->
-    <div class="meta">
-      <ul>
-      <li>Car owner: {{user.username}}</li>
-      <li>Car Maker: {{car_maker}}</li>
-     <li>Car body: {{car_body}}</li>
-      </ul>
-
-     
-    </div>
-    <div class="review">
-      Review: {{review}}
-    </div>
-    <div>
-       Review created on: {{created_at}}
+  <div class="columns is-centered">
+    <div class="column is-three-quarters box has-background-info">
+      <div class="box">
+        <div class="Car_name title is-4 box has-text-centered">
+          {{car_maker}} {{car_model}} {{car_body}}
+        </div>
+        <div class="meta">
+          <h1 class="title is-6">
+   <span class="icon is-small is-left">
+            <i class="fas fa-user"></i>
+          </span>
+            {{user.username}}
+          </h1>
+        </div>
+        <div class="content box column is-half ">
+          <p class="has-text-centered">
+          "{{review}}"
+          </p> 
+        </div>
+        <hr>
+        <div class="subtitle is-6">
+          {{created_at}}{{ post.comments.length}}
+        </div>
+      </div>
+      <button class="button">
+      <a class="is-info is-inverted" href="/post/{{id}}"> <i class="fad fa-comment"></i> {{comments.length}}</a>
+      </button>
     </div>
   </div>
-  </div>
-  </div>
-  </article>
-
-  <div class="meta">
-    <a href="/post/{{id}}"> <i class="fad fa-comment"></i> {{comments.length}}</a>
-  </div>
-  <br>
-  <br>
+</article>
+<br>
+<br>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+  integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />

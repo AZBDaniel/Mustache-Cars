@@ -1,24 +1,25 @@
-<button class="button">
+<button class="button is-inverted">
   <a href="/dashboard"><i class="fas fa-long-arrow-left"></i></a>
 </button>
 <br>
 <br>
 <br>
 <div class="columns is-centered">
-  <div class="box column is-three-fifths">
+  <div class="box column is-three-quarters">
     <h1 class="title has-text-centered">
       Edit Car Review
     </h1>
+    <hr class="has-background-dark">
     <br>
+
     <h1 class="title is-4 has-text-centered">
-      <!--  -->
-      Car Model:{{car_maker}} {{car_model}} {{car_body}}
+      {{car_maker}} {{car_model}} {{car_body}}
     </h1>
     <form class="edit-post-form">
       <input name="post-review" class="textarea" placeholder="Change your mind?" type="text" value="{{post.info}}" />
     </form>
     <div>
-      Review is created by {{user.username}} on {{ post.created_at}}
+      {{user.username}} {{ post.created_at}}
       |
       <a href="/post/{{post.id}}"><i class="fad fa-comment"></i> {{ post.comments.length}}</a>
     </div>
@@ -35,12 +36,12 @@
 <div class="columns is-centered">
   <div class="box column is-three-quarters">
     {{> comments post.comments}}
-    <form class="comment-form">
+    <form class="comment-form box column is-half">
       <div>
         <textarea class="textarea" name="comment-body"></textarea>
         <br>
         <br>
-        <button class="button is-info" type="submit"><i class="fad fa-comment"></i>
+        <button class="button is-info is-inverted" type="submit"><i class="fad fa-comment"></i>
           <a href="{{post.id}}"></a>
         </button>
 

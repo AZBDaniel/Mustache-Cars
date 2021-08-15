@@ -4,50 +4,69 @@
 </div>
 <br>
 <div class="columns is-centered">
-  <div class="column is-half">
+  <div class="column is-half box has-background-info">
     <section class="box is-info">
-      <form class="new-post-form ">
-        <div>
+      <form class="new-post-form form">
+
+        <div class="field">
           <label for="post-carmaker">Car Maker</label>
-          <input type="text" id="post-carmaker" name="post-carmaker" />
+          <div class="control">
+          <input class="input" type="text" id="post-carmaker" name="post-carmaker" />
+          </div>
         </div>
-        <div>
+
+        <div class="field">
           <label for="post-carmodel">Car Model</label>
-          <input type="text" id="post-carmodel" name="post-carmodel" />
-        </div>
-        <div>
+          <div class="control">
+           <input class="input" type="text" id="post-carmodel" name="post-carmodel" />
+          </div>
+
+        <div class="field">
           <label for="post-carbody">Car Body</label>
-          <input type="text" id="post-carbody" name="post-carbody" />
+          <div class="control">
+           <input class="input" type="text" id="post-carbody" name="post-carbody" />
+          </div>
         </div>
-        <div>
+
+        <div class="field">
           <label for="post-img">Your Car Image</label>
           <input id="post-img" name="post-img" />
         </div>
-        <div>
+
+        <div class="field">
           <label for="post-carbody">Car Review</label>
-          <input type="text" id="post-review" name="post-review" />
+          <div class="control">
+            <textarea class="input" id="post-review" name="post-review"> </textarea>
+          </div>
+
         </div>
-        <button type="submit" class="button is-info"> Share </i></button>
+        <button type="submit" class="button is-info"> Share</button>
+      </form>
+    </section>
   </div>
 </div>
-</form>
-</section>
-
+<br>
+<br>
 <div class="columns is-centered">
-  <div class="column is-half box">
-{{#if posts.length}}
-<section>
-  <h1 class="title has-text-centered">Your Posts</h1>
-  <ul>
-    {{#each posts as |post|}}
-    <li>
-      {{> post-info post}}
-      <a href="/dashboard/edit/{{post.id}}" class="edit-link"><i class="fad fa-edit"></i></a>
-    </li>
-    {{/each}}
-  </ul>
-</section>
-</div>
+  <div class="column is-half box has-background-info">
+    {{#if posts.length}}
+    <section class="box">
+      <h1 class="title has-text-centered">Your Posts</h1>
+      <br>
+      <ul>
+        {{#each posts as |post|}}
+        <li>
+          {{> post-info post}}
+          <div class="buttons">
+            <button class="button is-info is-inverted">
+              <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit <i class="fad fa-edit"></i>
+            </button>
+        </li>
+        <hr class="has-background-dark">
+        {{/each}}
+      </ul>
+    </section>
+  </div>
 </div>
 {{/if}}
 
