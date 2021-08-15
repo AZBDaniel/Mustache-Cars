@@ -1,0 +1,55 @@
+<br>
+<div class="create-post-header">
+  <h1 class="title has-text-centered">Create Post</h1>
+</div>
+<br>
+<div class="columns is-centered">
+  <div class="column is-half">
+    <section class="box is-info">
+      <form class="new-post-form ">
+        <div>
+          <label for="post-carmaker">Car Maker</label>
+          <input type="text" id="post-carmaker" name="post-carmaker" />
+        </div>
+        <div>
+          <label for="post-carmodel">Car Model</label>
+          <input type="text" id="post-carmodel" name="post-carmodel" />
+        </div>
+        <div>
+          <label for="post-carbody">Car Body</label>
+          <input type="text" id="post-carbody" name="post-carbody" />
+        </div>
+        <div>
+          <label for="post-img">Your Car Image</label>
+          <input id="post-img" name="post-img" />
+        </div>
+        <div>
+          <label for="post-carbody">Car Review</label>
+          <input type="text" id="post-review" name="post-review" />
+        </div>
+        <button type="submit" class="button is-info"> Share </i></button>
+  </div>
+</div>
+</form>
+</section>
+
+<div class="columns is-centered">
+  <div class="column is-half box">
+{{#if posts.length}}
+<section>
+  <h1 class="title has-text-centered">Your Posts</h1>
+  <ul>
+    {{#each posts as |post|}}
+    <li>
+      {{> post-info post}}
+      <a href="/dashboard/edit/{{post.id}}" class="edit-link"><i class="fad fa-edit"></i></a>
+    </li>
+    {{/each}}
+  </ul>
+</section>
+</div>
+</div>
+{{/if}}
+
+<script src="/javascript/add-post.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
