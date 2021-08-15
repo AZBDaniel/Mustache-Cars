@@ -2,7 +2,7 @@ async function editFormHandler(event) {
   event.preventDefault();
 
   const review = document
-    .querySelector('input[name="post-review"]')
+    .querySelector('texarea[name="post-review"]')
     .value.trim();
   const id = window.location.toString().split('/')[
     window.location.toString().split('/').length - 1
