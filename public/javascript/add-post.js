@@ -1,32 +1,30 @@
+let file = null;
+
 async function newFormHandler(event) {
   event.preventDefault();
 
   const car_maker = document.querySelector('input[name="post-carmaker"]').value;
   const car_model = document.querySelector('input[name="post-carmodel"]').value;
   const car_body = document.querySelector('input[name="post-carbody"]').value;
-  const img_link = document.querySelector('input[name="post-img"]').value;
   const review = document.querySelector('textarea[name="post-review"]').value;
+  const post_img = file;
 
-   // const img_link = document.querySelector('#car-upload input[type="file"]');
-  // img_link.onchange = () => {
-  //   if (img_link.files.length > 0) {
-  //     const carPhoto = document.querySelector('#car-upload .car-photo');
-  //     carPhoto.textContent = img_link.files[0].name;
-  //   }
-  // }
+  const formData = new FormData();
+  formData.append('car_maker', car_maker);
+  formData.append('car_model', car_model);
+  formData.append('car_body', car_body);
+  formData.append('review', review);
+  formData.append('post_img', post_img);
+  formData.append('img_link', '');
+
+  console.log(formData);
 
   const response = await fetch(`/api/posts`, {
     method: 'POST',
-    body: JSON.stringify({
-      car_maker,
-      car_model,
-      car_body,
-      img_link,
-      review,
-    }),
-    headers: {
-      'Content-Type': 'application/json',
-    },
+    body: formData,
+    // headers: {
+    //   'Content-Type': 'multipart/form-data',
+    // },
   });
 
   if (response.ok) {
@@ -39,3 +37,9 @@ async function newFormHandler(event) {
 document
   .querySelector('.new-post-form')
   .addEventListener('submit', newFormHandler);
+
+document
+  .getElementById('post-img')
+  .addEventListener('change', e => {
+    file = e.target.files[0];
+  });
