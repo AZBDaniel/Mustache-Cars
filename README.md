@@ -1,7 +1,12 @@
-# Mustache-Cars
-University of Arizona Second Group Project
+# Project Name 
+## Mustache-Cars
 
-![MIT](https://img.shields.io/static/v1.svg?label=License&message=MIT&color=Orange)
+## Badge
+
+[![Node js](https://img.shields.io/badge/node.js-%2343853D.svg?style=for-the-badge&logo=node-dot-js&logoColor=white)](https://shields.io/)  
+[![MySQL](https://img.shields.io/badge/MySQL-%23E34F26.svg?style=for-the-badge&logo=MySLQ&logoColor=white)](https://shields.io/)  
+[![inquirer](https://img.shields.io/badge/inquirer-%231572B6.svg?style=for-the-badge&logo=inquirer&logoColor=white)](https://shields.io/)  
+[![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)](https://shields.io/)
 
 ## Description
 
@@ -46,10 +51,10 @@ To use this application you can become a member at the hosted site ("Which is us
 
 
 ## Walkthrough or Screenshot
-[Sign Up Page](public/images/signupPage.PNG)
-[Login Page](public/images/loginPage.PNG)
-[Member Home Page](public/images/memberHomePage.PNG)
-[Member Dashboard](public/images/memberDashboardPage.PNG)
+![alt text](public/images/signupPage.PNG 'Sign Up Page')
+![alt text](public/images/loginPage.PNG 'Login Page')
+![alt text](public/images/memberHomePage.PNG 'Member Home Page')
+![alt text](public/images/memberDashboardPage.PNG 'Member Dashboard')
 
 ## Langauges
 - Javascript
@@ -61,13 +66,16 @@ To use this application you can become a member at the hosted site ("Which is us
 None Applicable 
 
 ## License
-[MIT License](https://opensource.org/licenses/MIT)
+https://choosealicense.com/licenses/express.js/  
+ https://choosealicense.com/licenses/mysql/  
+ https://choosealicense.com/licenses/node.js/
 
 Copyright (c) 2021
 
 ## Credits
 
 - University of Arizona Ta,s and Tutors
+- University of Arizona Second Group Project
 
 ## Questions
 
