@@ -19,7 +19,12 @@ Post.init(
     },
     img_link: {
       type: DataTypes.STRING,
-      allowNull: false,
+    },
+    img_type: {
+      type: DataTypes.STRING,
+    },
+    img_blob: {
+      type: DataTypes.BLOB('long'),
     },
     car_maker: {
       type: DataTypes.STRING,
