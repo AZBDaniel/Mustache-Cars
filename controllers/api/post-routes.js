@@ -1,10 +1,20 @@
+const multer = require('multer');
+
+var storage = multer.memoryStorage()
+var upload = multer({storage: storage});
+
+//module.exports = upload;
+
+
+
+
 const router = require('express').Router();
 //sequelize isnt called any where, dont think its needed.
 //const sequelize = require('../../config/connection');
 const { Post, User, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 const path = require('path');
-const upload = require('multer')({ dest: path.join(__dirname, '../../public/images/') });
+//const upload = require('multer')({ dest: path.join(__dirname, '../../public/images/') });
 
 // get all users
 router.get('/', (req, res) => {
@@ -88,7 +98,9 @@ router.post('/', withAuth, upload.single('post_img'), (req, res) => {
     car_model: req.body.car_model,
     car_body: req.body.car_body,
     review: req.body.review,
-    img_link: req.file.filename,
+    img_link: req.file.originalname,
+    img_type: req.file.mimetype,
+    img_blob: req.file.buffer,
     user_id: req.session.user_id,
   })
     .then((dbPostData) => res.json(dbPostData))
