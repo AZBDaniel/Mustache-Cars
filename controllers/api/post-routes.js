@@ -3,6 +3,8 @@ const router = require('express').Router();
 //const sequelize = require('../../config/connection');
 const { Post, User, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
+const path = require('path');
+const upload = require('multer')({ dest: path.join(__dirname, '../../public/images/') });
 
 // get all users
 router.get('/', (req, res) => {
@@ -79,13 +81,14 @@ router.get('/:id', (req, res) => {
     });
 });
 
-router.post('/', withAuth, (req, res) => {
+router.post('/', withAuth, upload.single('post_img'), (req, res) => {
+  console.log(req.body, req.file);
   Post.create({
     car_maker: req.body.car_maker,
     car_model: req.body.car_model,
     car_body: req.body.car_body,
     review: req.body.review,
-    img_link: req.body.img_link,
+    img_link: req.file.filename,
     user_id: req.session.user_id,
   })
     .then((dbPostData) => res.json(dbPostData))
