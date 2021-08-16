@@ -4,20 +4,30 @@
     <div class="column is-three-quarters box has-background-info">
       <div class="box">
         <div class="Car_name title is-4 box has-text-centered">
-          {{car_maker}} {{car_model}} {{car_body}}
+          Posted By: {{user.username}}
+        </div>
+        <div class="columns is-vcentered">
+          <div class="column is-3 box">
+            Car Manufacture: {{car_maker}} <br>
+            Car Model: {{car_model}} <br>
+            Car Body Type: {{car_body}}
+          </div>
+          <div class="column box">
+            {{img_link}}
+          </div>
         </div>
         <div class="meta">
           <h1 class="title is-6">
-   <span class="icon is-small is-left">
-            <i class="fas fa-user"></i>
-          </span>
-            {{user.username}}
+            <span class="icon is-small is-left">
+              <i class="fas fa-user"></i>
+            </span>
+            Review
           </h1>
         </div>
-        <div class="content box column is-half ">
+        <div class="content box column ">
           <p class="has-text-centered">
-          "{{review}}"
-          </p> 
+            "{{review}}"
+          </p>
         </div>
         <hr>
         <div class="subtitle is-6">
@@ -25,7 +35,7 @@
         </div>
       </div>
       <button class="button">
-      <a class="is-info is-inverted" href="/post/{{id}}"> <i class="fad fa-comment"></i> {{comments.length}}</a>
+        <a class="is-info is-inverted" href="/post/{{id}}"> <i class="fad fa-comment"></i> {{comments.length}}</a>
       </button>
     </div>
   </div>
