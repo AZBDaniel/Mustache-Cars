@@ -1,25 +1,41 @@
+<br>
 <article class="post">
   <div class="columns is-centered">
-        <div class="Car_name">
-            Issue Title: {{issue_title}}
-        </div>
-        <div class="meta">
-            <ol>
-                
-                <li>Issued By: {{user.username}}</li>
-            </ol>
-
-
-        </div>
-        <div class="review">
-            <li>Issued Comment: {{issue_comment}}</li>
+    <div class="column is-three-quarters box has-background-info">
+      <div class="box">
+        <div class="Car_name title is-4 box has-text-centered">
+          Bug Title: {{issue_title}}
         </div>
         <div>
-            Review created on: {{created_at}}
+          Issued By: {{user.username}}
         </div>
+        <div class="meta">
+          <h1 class="title is-6">
+            <span class="icon is-small is-left">
+              <i class="fas fa-user"></i>
+            </span>
+            Bug Details
+          </h1>
+        </div>
+        <div class="content box column is-half ">
+          <p class="has-text-centered">
+            "{{issue_comment}}"
+          </p>
+        </div>
+        <hr>
+        <div class="subtitle is-6">
+          {{created_at}}
+        </div>
+      </div>
+      <button class="button">
+        <a class="is-info is-inverted" href="/post/{{id}}"> <i class="fad fa-comment"></i> {{comments.length}}</a>
+      </button>
     </div>
-    </div>
-    <div class="meta">
-        <a href="/issue/{{id}}"> Issues:{{issues.length}}</a>
-    </div>
+  </div>
 </article>
+<br>
+<br>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+  integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />

@@ -1,0 +1,27 @@
+{{> issue-info issue}}
+{{#if loggedIn}}
+<div class="columns is-centered">
+  <div class="box column is-three-quarters">
+    {{> comments post.comments}}
+    <form class="comment-form">
+      <div class="box column is-centered">
+        <textarea class="textarea" name="comment-body"></textarea>
+        <br>
+        <br>
+        <button class="button is-info is-inverted" type="submit"><i class="fad fa-comment"></i>
+          <a href="{{issue.id}}"></a>
+        </button>
+
+      </div>
+    </form>
+  </div>
+</div>
+{{/if}}
+
+{{#if loggedIn}}
+<script src="/javascript/comment.js"></script>
+
+{{/if}}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+  integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
